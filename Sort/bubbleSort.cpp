@@ -1,35 +1,45 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-int main()
+
+void bubbleSort(vector<int> arr)
 {
-    // Time complexitiy for bubble o(n^2) Worst Case and Average Case complexitiy
-    vector<int> arr{10, 1, 7, 6, 14, 9};
-    int n = arr.size();
-    // Bubble sort
-    for (int i = 1; i < n; i++)
+    // outer loop for no of round the loop will run or iterate to get sorted array
+    for (int i = 1; i < arr.size(); i++)
     {
-        bool swapped = false;
-        for (int j = 0; j < n - i; j++)
+        bool sort = false;
+        // inner loop to find the maximum value from jth index and j+1 ith index
+        for (int j = 0; j < arr.size() - i; j++)
         {
             if (arr[j] > arr[j + 1])
             {
-                swapped = true;
+                sort = true;
+                // swap the first value with next value if first value is greater than next value
                 swap(arr[j], arr[j + 1]);
             }
         }
-        // Allready sorted array ki time complexitity
-        // O(n) in Best Case
-        if (swapped == false)
+        // means vector is already sorted in this case TC becomes O(n) whether is all other case TC remains O(n^2)
+        if (sort == false)
         {
             break;
         }
     }
-    // printing
-    for (int i = 0; i < n; i++)
+    // print
+    for (int i = 0; i < arr.size(); i++)
     {
         cout << arr[i] << " ";
     }
-    cout << endl;
-    return 0;
+}
+
+int main()
+{
+    int num;
+    cout << "Enter the size of vector  : ";
+    cin >> num;
+    vector<int> arr(num);
+    for (int i = 0; i < arr.size(); i++)
+    {
+        cin >> arr[i];
+    }
+    bubbleSort(arr);
 }

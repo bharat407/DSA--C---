@@ -2,41 +2,48 @@
 #include <vector>
 using namespace std;
 
-int main()
+void insertionSort(vector<int> arr)
 {
-    vector<int> arr{10, 1, 7, 6, 14, 9};
-    int n = arr.size();
-
-    // insertion sort
-    for (int round = 1; round < n; round++)
+    // outer loop for number of round will run or iterate to get sorted array
+    for (int i = 1; i < arr.size(); i++)
     {
-        // Step A - fetch
-        int val = arr[round];
-        // StepB: Compare
-        int j = round - 1;
-        for (; j >= 0; j--)
+        // init value
+        int value = arr[i];
+        // intitial value of j
+        int j = i - 1;
+        while (j >= 0)
         {
-            if (arr[j] > val)
+            // to check that
+            if (arr[j] > value)
             {
-                // Step C: shift
+                // store the big value
                 arr[j + 1] = arr[j];
+                j--;
             }
             else
             {
-                // rukna hai
                 break;
             }
         }
-        // stepD: Copy
-        arr[j + 1] = val;
+        // copy the value
+        arr[j + 1] = value;
     }
-
-    // printinhg
-    for (int i = 0; i < n; i++)
+    // print
+    for (int i = 0; i < arr.size(); i++)
     {
         cout << arr[i] << " ";
     }
-    cout << endl;
+}
 
-    return 0;
+int main()
+{
+    int num;
+    cout << "Enter the size of vector  : ";
+    cin >> num;
+    vector<int> arr(num);
+    for (int i = 0; i < arr.size(); i++)
+    {
+        cin >> arr[i];
+    }
+    insertionSort(arr);
 }

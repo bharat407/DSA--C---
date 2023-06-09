@@ -5,29 +5,34 @@ using namespace std;
 bool checkPalindrome(char word[])
 {
     int i = 0;
-    int n = strlen(word);
-    int j = n - 1;
-
+    int j = strlen(word) - 1;
     while (i <= j)
     {
-        if (word[i] != word[j])
+        // compare the first value with last value
+        if (word[i] == word[j])
         {
-            return false;
-        }
-        else
-        {
+            return true;
             i++;
             j--;
         }
+        else
+        {
+            return false;
+        }
     }
-    return true;
 }
 
 int main()
 {
-
-    char arr[100] = "lol";
-    cout << "palindrome check: " << checkPalindrome(arr);
-
-    return 0;
+    char word[100];
+    cout << "Enter the word : ";
+    cin.getline(word, 100);
+    if (checkPalindrome(word))
+    {
+        cout << "It is a palindrome";
+    }
+    else
+    {
+        cout << "It is not a Palindrome";
+    }
 }
