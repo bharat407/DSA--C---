@@ -18,35 +18,4 @@ int main()
         }
         cout << endl;
     }
-
-    // int rows, cols;
-    // cout<<"The number of rows : ";cin>>rows;
-    // cout<<"The number of cols : ";cin>>cols;
-    // int arr[rows][cols];
-    // for(int i=0; i<rows; i++) {
-    //     for(int j=0; j<cols; j++) {
-    //         cin>>arr[i][j];
-    //     }
-    // }
-    // cout<<endl;
-    //  //row-wise access
-    // for(int i=0; i<rows; i++) {
-    //     for(int j=0; j<cols; j++) {
-    //         cout<<arr[i][j]<<" ";
-    //     }
-    //     cout<<endl;
-    // }
-    // cout<<endl;
-    // //col-wise access
-    // for(int i=0; i<rows; i++) {
-    //     for(int j=0; j<cols; j++) {
-    //         cin>>arr[j][i];
-    //     }
-    // }
-    // for(int i=0; i<rows; i++) {
-    //     for(int j=0; j<cols; j++) {
-    //         cout<<arr[j][i]<<" ";
-    //     }
-    //     cout<<endl;
-    // }
 }
