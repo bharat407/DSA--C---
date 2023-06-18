@@ -21,6 +21,6 @@ int main()
     int maxi = INT_MIN;
     int i = 0;
     solve(arr, sum, maxi, i);
-    cout << maxi;
+    cout << "Maximum sum for non adjacen elment is :- " << maxi;
     return 0;
 }
