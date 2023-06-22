@@ -1,19 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class Animal{
-    public:
-        void speak(){
-            cout<<"Speaking"<<endl;
-        }
+class Animal
+{
+public:
+    void speak()
+    {
+        cout << "Speaking" << endl;
+    }
 };
-class Dog : public Animal{
-    public:
-        // Function overriding
-        void speak(){
-            cout<<"Barking"<<endl;
-        }
+class Dog : public Animal
+{
+public:
+    // Function overriding
+    void speak()
+    {
+        cout << "Barking" << endl;
+    }
 };
-int main(){
+int main()
+{
     Animal a;
     a.speak(); // Speaking will come
     Dog d;
